@@ -20,7 +20,7 @@
 	git commit -m 'message' : commit을 하고 commit에 대한 간단한 메세지 작성
 	git log : commit 내역 확인
 
-ㅎ
+
 5. 특정 commit 지점으로 되돌리기
 	1. git log 또는 git reflog를 통해 <commit id> 확인
 	git reset --soft <commit id> : commit 내역을 되돌리고, commit만 취소(add는 그대로 둠, staging area에는 남겨둠)
@@ -29,3 +29,12 @@
 	git reset --hard <commit id> : commit 내역을 되돌리고 파일을 rollback
 
 	git revert <commit id> : 지정한 commit으로 인해 발생한 변경을 되돌리고, 새로운 commit을 생성해 commit에 추가
+
+
+6. 원격 리포지토리 추가 및 puch/pull 
+	git remote add origin <remote repository 주소>
+	git pull --allow-unrelated-histories origin main
+		*원격 리포지토리에서 처음 pull 할 때만 --allow-unrelated-histories 옵션 사용
+	git push -u origin main
+		-u : push할 기본 원격저장소와 브랜치를 기억
+		앞으로는 git push만 해도 원격저장소와 브랜치를 잡아준다.
